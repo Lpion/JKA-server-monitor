@@ -39,5 +39,8 @@
     font-weight: 900;
     color: white;
     min-height: 200px;
+    min-width: 400px;
     margin-top: 20px;
+    background: #545d68c5;
+    padding: 10px;
 }
