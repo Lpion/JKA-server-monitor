@@ -61,6 +61,15 @@
 #server-info {
   width: 50%;
   padding-right: 10px;
+  font-size: 0.7em;
+  color:rgb(128, 128, 128);
+  text-transform: uppercase;
+}
+#server-info span {
+  color: #fff;
+}
+#plugin {
+  margin-right: 20px;
 }
 
 #levelshot {
