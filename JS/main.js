@@ -25,55 +25,58 @@ function getServerInfo() {
     }
   });
 }
-  getServerInfo()
+getServerInfo()
 
-  function createOnlineLists(jkaData){
-    // create playername list
-    for (let i = 0; i < jkaData['players'].length; i++) {    
-      const playername = jkaData['players'][i][1];
+function createOnlineLists(jkaData){
+  // create playername list
+  for (let i = 0; i < jkaData['players'].length; i++) {    
+    const playername = jkaData['players'][i][1];
 
-      // if PING data == 0 it is a player
-      const listtype = jkaData['players'][i][0] == '0' ? '#botlist' : '#playerlist';
+    // if PING data == 0 it is a player
+    const listtype = jkaData['players'][i][0] == '0' ? '#botlist' : '#playerlist';
 
-      // Output playerlist
-      $(listtype).append('<li>' + colorizeNames('^7' + playername) + '</li>');
-    }
-
-    createOnlineListCounters()
-
+    // Output playerlist
+    $(listtype).append('<li>' + colorizeNames('^7' + playername) + '</li>');
   }
 
-  function createOnlineListCounters() {
-    // count bots and players based off created ul li items
-    const botcount = $('#botlist li').length 
-    const playercount = $('#playerlist li').length
-    // output counts and text based of count length
-    $("#bot-heading").append(botcount > 2 || botcount == 0 ? botcount + ' Bots' : botcount + ' Bot');
-    $("#player-heading").append(playercount > 1 || playercount == 0 ? playercount + ' Players' : playercount + ' Player');
-  }
+  // show/hide bot section after reload
+  $('#bots-toggle').is(':checked') ? $('#bots').show() : $('#bots').hide() 
 
-  function colorizeNames(playername){
-    let colors = ['#000000','#f31415','#0af60a','#fefe00','#0d0df8','#0ef3f4','#fd02fe','#ffffff','#fd7d00', '#8a8e93']
-    let prevCaret = playername.length;
-    let colorizedName = '';
+  createOnlineListCounters()
 
-      for (let i = playername.length; i >= 0; i--) {
-        if (playername.charAt(i) == '^' && (playername.charAt(i+1) >= '0' && playername.charAt(i+1) <= '9')) {
-          
-          let colorInt = parseInt(playername.charAt(i+1));
-          let tintedChars = playername.substring(i+2, prevCaret);
+}
 
-          prevCaret = i;
+function createOnlineListCounters() {
+  // count bots and players based off created ul li items
+  const botcount = $('#botlist li').length 
+  const playercount = $('#playerlist li').length
+  // output counts and text based of count length
+  $("#bot-heading").append(botcount > 2 || botcount == 0 ? botcount + ' Bots' : botcount + ' Bot');
+  $("#player-heading").append(playercount > 1 || playercount == 0 ? playercount + ' Players' : playercount + ' Player');
+}
 
-          colorInt = $('#color-toggle').is(':checked') ? colorInt : 7
+function colorizeNames(playername){
+  let colors = ['#000000','#f31415','#0af60a','#fefe00','#0d0df8','#0ef3f4','#fd02fe','#ffffff','#fd7d00', '#8a8e93']
+  let prevCaret = playername.length;
+  let colorizedName = '';
 
-          colorizedName = tintedChars.fontcolor(colors[colorInt]) + colorizedName;
-        }
+    for (let i = playername.length; i >= 0; i--) {
+      if (playername.charAt(i) == '^' && (playername.charAt(i+1) >= '0' && playername.charAt(i+1) <= '9')) {
+        
+        let colorInt = parseInt(playername.charAt(i+1));
+        let tintedChars = playername.substring(i+2, prevCaret);
+
+        prevCaret = i;
+
+        colorInt = $('#color-toggle').is(':checked') ? colorInt : 7
+
+        colorizedName = tintedChars.fontcolor(colors[colorInt]) + colorizedName;
       }
-      return colorizedName
-  }
+    }
+    return colorizedName
+}
 
-  function createMapInfos(jkaData) {
-    $('#map').append(jkaData['map']);
-    $('#levelshot').attr("src","./img/levelshots/" + jkaData['map'] + ".jpg");
-  }
+function createMapInfos(jkaData) {
+  $('#map').append(jkaData['map']);
+  $('#levelshot').attr("src","./img/levelshots/" + jkaData['map'] + ".jpg");
+}

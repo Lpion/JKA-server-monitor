@@ -43,21 +43,29 @@
     <div id="settings">
       <!-- Show JKA Colors -->
       <div class="settings-item">
-        <input type="checkbox" name="color-toggle" id="color-toggle" checked onchange="getServerInfo()"><label for="color-toggle"></label> <span>JKA Colors</span>
+        <input type="checkbox" name="color-toggle" id="color-toggle" checked onchange="getServerInfo()">
+        <label for="color-toggle"></label> <span>JKA Colors</span>
       </div>
 
-      
+      <div class="settings-item">
+        <input type="checkbox" name="bots-toggle" id="bots-toggle" checked onchange="$('#bots').toggle()">
+        <label for="bots-toggle"></label> <span>Show Bots</span>
+      </div>
 
       <button id="refresh-btn" onclick="getServerInfo()"></button>
     </div>
 
     <!-- Playerlist -->
-    <h4 class="jkaData" id="player-heading"></h4>
-    <ul class="jkaData" id="playerlist"></ul>
+    <div id="players">
+      <h4 class="jkaData" id="player-heading"></h4>
+      <ul class="jkaData" id="playerlist"></ul>
+    </div>
     <br>
     <!-- Botlist -->
-    <h4 class="jkaData" id="bot-heading"></h4>
-    <ul class="jkaData" id="botlist"></ul>
+    <div id="bots">
+      <h4 class="jkaData" id="bot-heading"></h4>
+      <ul class="jkaData" id="botlist"></ul>
+    </div>
   </div>
 
 </div>
