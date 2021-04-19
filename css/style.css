@@ -29,18 +29,58 @@
     font-size: 20px;
 }
 
-#server-info {
-    display: inline-block;
+#info-box {
+    display: flex;
     color: white;
+    width: 49%;
+    margin: auto;
+    margin-top: 500px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.5);
+    background: #545d6873;
+    padding: 20px;
+}
+
+#server-info {
+  width: 50%;
+}
+
+#lists {
+  width: 50%;
 }
 
 #playerlist, #botlist {
     font-size: 20px;
     font-weight: 900;
     color: white;
-    min-height: 200px;
-    min-width: 400px;
-    margin-top: 20px;
-    background: #545d68c5;
-    padding: 10px;
+    list-style: none;
+}
+
+
+h4 {
+  overflow: hidden;
+  text-align: left;
+  font-size: 0.7em;
+  color:rgb(128, 128, 128);
+  padding-bottom: 5px;
+}
+
+h4:before,
+h4:after {
+  background-color: rgba(128, 128, 128, 0.185);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+}
+
+h4:before {
+  right: 0.5em;
+  margin-left: -100%;
+}
+
+h4:after {
+  left: 0.5em;
+  margin-right: -50%;
 }

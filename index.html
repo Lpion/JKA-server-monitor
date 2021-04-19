@@ -17,7 +17,7 @@
 <!-- Title -->
 <div id='stars'></div>
 <div id='stars2'></div>
-<div id='stars3'></div>
+<!-- <div id='stars3'></div> -->
 <div id='title'>
   <span>
     ]UE[ UNITED EXILES
@@ -29,21 +29,25 @@
 </div>
 
 <!-- Server Informations -->
-<div id="server-info">
+<div id="info-box">
   <!-- Server and Map Info -->
-  Server Plugin: <span class="jkaData" id="plugin"></span> | Current Map: <span class="jkaData" id="map"></span>
-  <hr>
+  <div id="server-info">
+    Server Plugin: <span class="jkaData" id="plugin"></span> | Current Map: <span class="jkaData" id="map"></span><br>
+    <img id="mapimage" src="" alt="levelshot">
+  </div>
 
-  <!-- Playerlist -->
-  <h2>Players:</h2>
-  <ul class="jkaData" id="playerlist"></ul>
+  <div id="lists">
+    <!-- Playerlist -->
+    <h4 class="jkaData" id="player-heading"></h4>
+    <ul class="jkaData" id="playerlist"></ul>
+    <br>
+    <!-- Botlist -->
+    <h4 class="jkaData" id="bot-heading"></h4>
+    <ul class="jkaData" id="botlist"></ul>
+  </div>
 
-  <!-- Botlist -->
-  <h2>Bots:</h2>
-  <ul class="jkaData" id="botlist"></ul>
-
-  <button onclick="getServerInfo()">Refresh</button>
 </div>
+<button onclick="getServerInfo()">Refresh</button>
 
 <script src="./JS/main.js"></script>
 </body>
