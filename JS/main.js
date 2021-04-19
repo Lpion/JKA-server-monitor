@@ -62,4 +62,5 @@ function getServerInfo() {
 
   function createMapInfos(jkaData) {
     $('#map').append(jkaData['map']);
+    $('#levelshot').attr("src","./img/levelshots/" + jkaData['map'] + ".jpg");
   }
