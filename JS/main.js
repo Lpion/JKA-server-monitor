@@ -7,11 +7,11 @@ function getServerInfo() {
       dataType: "json",
       success: function (jkaData) {
 
-        createOnlineLists(jkaData)
+        createOnlineLists(jkaData);
         
         // output server info
         $('#plugin').append(jkaData['mod']);
-        $('#map').append(jkaData['map']);
+        createMapInfos(jkaData);
       }
     });
   }
@@ -26,7 +26,7 @@ function getServerInfo() {
       const listtype = jkaData['players'][i][0] == '0' ? '#botlist' : '#playerlist';
 
       // Output playerlist
-      $(listtype).append('<li>' + colorize('^7' + playername) + '</li>');
+      $(listtype).append('<li>' + colorizeNames('^7' + playername) + '</li>');
     }
 
     createOnlineListCounters()
@@ -42,7 +42,7 @@ function getServerInfo() {
     $("#player-heading").append(playercount > 1 || playercount == 0 ? playercount + ' Players' : playercount + ' Player');
   }
 
-  function colorize(playername){
+  function colorizeNames(playername){
     let colors = ['#000000','#f31415','#0af60a','#fefe00','#0d0df8','#0ef3f4','#fd02fe','#ffffff','#fd7d00', '#8a8e93']
     let prevCaret = playername.length;
     let colorizedName = '';
@@ -58,4 +58,8 @@ function getServerInfo() {
         }
       }
       return colorizedName
+  }
+
+  function createMapInfos(jkaData) {
+    $('#map').append(jkaData['map']);
   }
