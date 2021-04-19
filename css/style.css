@@ -32,20 +32,27 @@
 #info-box {
     display: flex;
     color: white;
-    width: 49%;
+    width: 50%;
     margin: auto;
     margin-top: 500px;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.5);
     background: #545d6873;
     padding: 20px;
+    z-index: 999;
 }
 
 #server-info {
   width: 50%;
+  padding-right: 10px;
+}
+
+#levelshot {
+  width: 100%;
 }
 
 #lists {
   width: 50%;
+  padding-left: 10px;
 }
 
 #playerlist, #botlist {
