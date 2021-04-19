@@ -25,7 +25,8 @@
   <br>
   <small>
     Jedi Knight Academy Clan
-  </small>
+  </small><br>
+  <input id="connection" type="text" value="64.94.95.202:29070">
 </div>
 
 <!-- Server Informations -->
@@ -37,6 +38,10 @@
   </div>
 
   <div id="lists">
+    <div id="settings">
+      
+      <button id="refresh-btn" onclick="getServerInfo()"></button>
+    </div>
     <!-- Playerlist -->
     <h4 class="jkaData" id="player-heading"></h4>
     <ul class="jkaData" id="playerlist"></ul>
@@ -47,7 +52,6 @@
   </div>
 
 </div>
-<button onclick="getServerInfo()">Refresh</button>
 
 <script src="./JS/main.js"></script>
 </body>

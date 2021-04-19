@@ -1,20 +1,30 @@
-function getServerInfo() {
-  $('.jkaData').html('');
-    $.ajax({
-      url: "./Scripts/getPlayers.php",
-      type: "POST",
-      data: {host: "64.94.95.202", port: "29070"},
-      dataType: "json",
-      success: function (jkaData) {
+$("#connection").on('keyup', function (e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+        getServerInfo();
+    }
+});
 
-        createOnlineLists(jkaData);
-        
-        // output server info
-        $('#plugin').append(jkaData['mod']);
-        createMapInfos(jkaData);
-      }
-    });
-  }
+function getServerInfo() {
+
+  // get connection data for input field
+  const conn = $('#connection').val().split(':')
+  $('.jkaData').html('');
+
+  // request server infos
+  $.ajax({
+    url: "./Scripts/getPlayers.php",
+    type: "POST",
+    data: {host: conn[0], port: conn[1]},
+    dataType: "json",
+    success: function (jkaData) {
+      createOnlineLists(jkaData);
+      
+      // output server info
+      $('#plugin').append(jkaData['mod']);
+      createMapInfos(jkaData);
+    }
+  });
+}
   getServerInfo()
 
   function createOnlineLists(jkaData){
