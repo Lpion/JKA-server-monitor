@@ -54,13 +54,13 @@
   margin-top: 500px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,.5);
   background: #545d6873;
-  padding: 20px;
+  padding: 40px;
   z-index: 999;
 }
 
 #server-info {
   width: 50%;
-  padding-right: 10px;
+  padding-right: 20px;
   font-size: 0.7em;
   color:rgb(128, 128, 128);
   text-transform: uppercase;
@@ -128,7 +128,7 @@ input[type=checkbox]:checked + label {
 
 #lists {
   width: 50%;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 #playerlist, #botlist {
