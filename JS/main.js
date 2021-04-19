@@ -64,6 +64,9 @@ function getServerInfo() {
           let tintedChars = playername.substring(i+2, prevCaret);
 
           prevCaret = i;
+
+          colorInt = $('#color-toggle').is(':checked') ? colorInt : 7
+
           colorizedName = tintedChars.fontcolor(colors[colorInt]) + colorizedName;
         }
       }
