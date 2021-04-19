@@ -38,13 +38,19 @@
   </div>
 
   <div id="lists">
+
+    <h4>Settings</h4>
     <div id="settings">
+      <!-- Show JKA Colors -->
       <div class="settings-item">
         <input type="checkbox" name="color-toggle" id="color-toggle" checked onchange="getServerInfo()"><label for="color-toggle"></label> <span>JKA Colors</span>
       </div>
 
+      
+
       <button id="refresh-btn" onclick="getServerInfo()"></button>
     </div>
+
     <!-- Playerlist -->
     <h4 class="jkaData" id="player-heading"></h4>
     <ul class="jkaData" id="playerlist"></ul>
