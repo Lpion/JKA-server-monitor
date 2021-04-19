@@ -5,9 +5,11 @@ $("#connection").on('keyup', function (e) {
 });
 
 function getServerInfo() {
+  // start spining animation to display loading
+  $('#refresh-btn').css('animation-duration','5000ms');
 
   // get connection data for input field
-  const conn = $('#connection').val().split(':')
+  const conn = $('#connection').val().split(':');
   $('.jkaData').html('');
 
   // request server infos
@@ -37,6 +39,9 @@ function createOnlineLists(jkaData){
 
     // Output playerlist
     $(listtype).append('<li>' + colorizeNames('^7' + playername) + '</li>');
+    
+    // end spining animation to display loading
+    $('#refresh-btn').css('animation-duration','0ms');
   }
 
   // show/hide bot section after reload
