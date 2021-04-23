@@ -14,7 +14,7 @@ function getServerInfo() {
 
   // request server infos
   $.ajax({
-    url: "./Scripts/getPlayers.php",
+    url: "./Scripts/getServerInfos.php",
     type: "POST",
     data: {host: conn[0], port: conn[1]},
     dataType: "json",
