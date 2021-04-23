@@ -64,7 +64,7 @@ function colorizeNames(playername){
   let colors = ['#000000','#f31415','#0af60a','#fefe00','#0d0df8','#0ef3f4','#fd02fe','#ffffff','#fd7d00', '#8a8e93']
   let prevCaret = playername.length;
   let colorizedName = '';
-
+    // thx Miha <3
     for (let i = playername.length; i >= 0; i--) {
       if (playername.charAt(i) == '^' && (playername.charAt(i+1) >= '0' && playername.charAt(i+1) <= '9')) {
         

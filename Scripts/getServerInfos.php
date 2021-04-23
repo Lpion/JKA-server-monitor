@@ -6,7 +6,7 @@ $port = $_POST['port'];
 // UDP Socket
 $socket = socket_create (AF_INET, SOCK_DGRAM, SOL_UDP);
 
-// jka getstatus request
+// jka getstatus request, thx Miha <3
 $jka_request = str_repeat(chr(0xFF),4)."getstatus\n";
 
 // Send UDP Packet
