@@ -15,60 +15,66 @@
 </head>
 <body>
 <!-- Title -->
-<div id='stars'></div>
-<div id='stars2'></div>
-<!-- <div id='stars3'></div> -->
-<div id='title'>
-  <span>
-    ]UE[ UNITED EXILES
-  </span>
-  <br>
-  <small>
-    Jedi Knight Academy Clan
-  </small><br>
-  <input id="connection" type="text" value="64.94.95.202:29070">
+<div id="starcontainer">
+  <div id='stars'></div>
+  <div id='stars2'></div>
 </div>
 
-<!-- Server Informations -->
-<div id="info-box">
-  <!-- Server and Map Info -->
-  <div id="server-info">
-    <img id="levelshot" src="" alt="levelshot">
-    Server Plugin | <span class="jkaData" id="plugin"></span>  
-    Current Map | <span class="jkaData" id="map"></span>
-  </div>
+<div id="content">
 
-  <div id="lists">
-
-    <h4>Settings</h4>
-    <div id="settings">
-      <!-- Show JKA Colors -->
-      <div class="settings-item">
-        <input type="checkbox" name="color-toggle" id="color-toggle" checked onchange="getServerInfo()">
-        <label for="color-toggle"></label> <span>JKA Colors</span>
-      </div>
-
-      <div class="settings-item">
-        <input type="checkbox" name="bots-toggle" id="bots-toggle" checked onchange="$('#bots').toggle()">
-        <label for="bots-toggle"></label> <span>Show Bots</span>
-      </div>
-
-      <button id="refresh-btn" onclick="getServerInfo()"></button>
-    </div>
-
-    <!-- Playerlist -->
-    <div id="players">
-      <h4 class="jkaData" id="player-heading"></h4>
-      <ul class="jkaData" id="playerlist"></ul>
-    </div>
+  <!-- <div id='stars3'></div> -->
+  <div id='title'>
+    <span>
+      ]UE[ UNITED EXILES
+    </span>
     <br>
-    <!-- Botlist -->
-    <div id="bots">
-      <h4 class="jkaData" id="bot-heading"></h4>
-      <ul class="jkaData" id="botlist"></ul>
-    </div>
+    <small>
+      Jedi Knight Academy Clan
+    </small><br>
+    <input id="connection" type="text" value="64.94.95.202:29070">
   </div>
 
+  <!-- Server Informations -->
+  <div id="info-box">
+    <!-- Server and Map Info -->
+    <div id="server-info">
+      <img id="levelshot" src="" alt="levelshot">
+      Server Plugin | <span class="jkaData" id="plugin"></span>  
+      Current Map | <span class="jkaData" id="map"></span>
+    </div>
+
+    <div id="lists">
+
+      <h4>Settings</h4>
+      <div id="settings">
+        <!-- Show JKA Colors -->
+        <div class="settings-item">
+          <input type="checkbox" name="color-toggle" id="color-toggle" checked onchange="getServerInfo()">
+          <label for="color-toggle"></label> <span>JKA Colors</span>
+        </div>
+
+        <div class="settings-item">
+          <input type="checkbox" name="bots-toggle" id="bots-toggle" checked onchange="$('#bots').toggle()">
+          <label for="bots-toggle"></label> <span>Show Bots</span>
+        </div>
+
+        <button id="refresh-btn" onclick="getServerInfo()"></button>
+      </div>
+
+      <!-- Playerlist -->
+      <div id="players">
+        <h4 class="jkaData" id="player-heading"></h4>
+        <ul class="jkaData" id="playerlist"></ul>
+      </div>
+      <br>
+      <!-- Botlist -->
+      <div id="bots">
+        <h4 class="jkaData" id="bot-heading"></h4>
+        <ul class="jkaData" id="botlist"></ul>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <script src="./JS/main.js"></script>
